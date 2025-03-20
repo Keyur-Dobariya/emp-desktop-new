@@ -7,23 +7,21 @@
     "build": "electron-builder"
   },
   "build": {
-    "asar": true,
-    "appId": "empdesktop",
-    "productName": "Teqheal Tracker",
-    "icon": "assets/image/teqheal.ico",
-    "win": {
-      "target": "nsis"
-    },
-    "mac": {
-      "target": [
-        "dmg",
-        "zip"
-      ]
-    },
-    "directories": {
-      "output": "dist"
-    }
+  "appId": "empdesktop",
+  "productName": "Teqheal Tracker",
+  "icon": "assets/image/teqheal.icns",
+  "win": {
+    "target": "nsis",
+    "icon": "assets/image/teqheal.ico"
   },
+  "mac": {
+    "target": ["dmg", "zip"],
+    "icon": "assets/image/teqheal.icns"
+  },
+  "directories": {
+    "output": "dist"
+  }
+},
   "author": "",
   "license": "ISC",
   "description": "",
