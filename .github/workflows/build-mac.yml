@@ -5,6 +5,7 @@ on: push  # Runs when you push code to the repo
 jobs:
   build-mac:
     runs-on: macos-latest  # Uses a macOS runner
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -17,8 +18,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set up GitHub Token
+        run: echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+
       - name: Build macOS App
         run: npm run build
+
+      - name: Verify Build Output
+        run: ls -lah dist/  # Check if DMG file is generated
 
       - name: Upload macOS Build Artifact
         uses: actions/upload-artifact@v4
