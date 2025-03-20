@@ -1,0 +1,27 @@
+name: Build Electron App for macOS
+
+on: push  # Runs when you push code to the repo
+
+jobs:
+  build-mac:
+    runs-on: macos-latest  # Uses a macOS runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build macOS App
+        run: npm run build
+
+      - name: Upload macOS Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: mac-build
+          path: dist/*.dmg  # Uploads the .dmg file
