@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <title>Teqheal Tracker</title>
+</head>
+
+<body>
+    <div id="loader-overlay">
+        <div class="loader"></div>
+    </div>
+    <div class="login_content">
+        <img class="login_img" src="../assets/image/login-bg.jpg" alt="Login image" />
+
+        <form class="login_form">
+            <img src="../assets/image/teqheal_logo.png" alt="Teqheal Logo" class="logo" style="width: 160px;">
+
+            <div>
+                <div class="login_inputs">
+                    <div>
+                        <label for="email" class="login_label">Email</label>
+                        <!-- <input class="login_input" type="email" id="loginId" placeholder="Enter email address" 
+                        value="keyur.teqheal@gmail.com" required /> -->
+                        <input class="login_input" type="email" id="loginId" placeholder="Enter email address" required />
+                    </div>
+
+                    <div>
+                        <label for="password" class="login_label">Password</label>
+                        <div class="login_box">
+                            <!-- <input class="login_input" type="password" id="password"
+                                placeholder="Enter password" value="Admin@123" required /> -->
+                            <input class="login_input" type="password" id="password"
+                                placeholder="Enter password" required />
+                            <!-- <i class="ri-eye-off-line login_eye" id="input-icon"></i> -->
+                            <div class="passHide login_eye" id="input-icon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="forgot_password_container">
+                    <div id="forgot_password">Forgot Password?</div>
+                </div>
+                <div id="login_btn">Log In</div>
+                <div class="signup_btn_container">Don't have an account?
+                    <div id="signup_btn">Register</div>
+                </div>
+                <div id="error_msg"></div>
+            </div>
+        </form>
+    </div>
+    <div id="toast-container"></div>
+
+    <script src="../config.js"></script>
+    <script type="module" src="./login.js"></script>
+</body>
+
+</html>

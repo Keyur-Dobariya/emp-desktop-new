@@ -1,0 +1,42 @@
+{
+  "name": "empdesktop",
+  "version": "1.0.0",
+  "main": "electron.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "asar": true,
+    "appId": "empdesktop",
+    "productName": "Teqheal Tracker",
+    "icon": "assets/image/teqheal.ico",
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "directories": {
+      "output": "dist"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "empdesktop": "file:",
+    "node-global-key-listener": "^0.3.0",
+    "node-persist": "^4.0.4",
+    "screenshot-desktop": "^1.15.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "electron": "^34.1.1",
+    "electron-builder": "^25.1.8",
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <title>Teqheal Tracker</title>
+</head>
+
+<body>
+    <div id="loader-overlay">
+        <div class="loader"></div>
+    </div>
+    <div class="trackingBox" id="trackingBox">
+        <div class="userInfoBox">
+            <div class="userInfo">
+                <div class="userAvatar">
+                    <img class="profileImage" id="profileImage" src="../assets/image/profile_placeholder.png"
+                        alt="User Avatar">
+                    <div class="activeStatus"></div>
+                </div>
+                <div class="userDetail" id="userDetail" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                    <div id="userName"></div>
+                    <div id="userEmail"></div>
+                </div>
+            </div>
+            <div class="btnContainer">
+                <div class="addTaskBtn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add/View Tasks"></div>
+                <div class="logoutBtn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="LogOut"></div>
+            </div>
+        </div>
+        <div class="trackingInfo">
+            <div class="trackingInfoTitle">Attendance</div>
+            <div class="dateTime"></div>
+            <div class="currentTask"></div>
+            <div class="mainContent">
+                <div class="trackingProgressBar">
+                    <svg viewBox="0 0 100 100" role="graphic">
+                        <circle cx="50" cy="50" r="40"></circle>
+                        <circle cx="50" cy="50" r="40" id="progressIndicator"></circle>
+                    </svg>
+                    <div class="innerContent">
+                        <div class="innerContentTxt">Total Hours</div>
+                        <div class="totalHourTxt"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerBox">
+                <div class="footerContent">
+                    <div class="fingerprintIcon"></div>
+                    <div class="punchinAtTxt">Punch In At: None</div>
+                </div>
+                <div class="footerContent">
+                    <div class="breakIcon"></div>
+                    <div class="breakTxt">Break Hours: 0h 0m 0s</div>
+                </div>
+                <div class="btnContent">
+                    <div class="punchInBtn">
+                        <div class="punchInBtnTxt">Punch In</div>
+                    </div>
+                    <div class="breakInBtn">
+                        <div class="breakInBtnTxt">Break In</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <h4 class="modal-title">Confirmation!</h4>
+                <div class="modalBody">
+                    <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modelBtns">
+                    <button type="button" class="closeBtn btn btn-outline-secondary btn-sm">Close</button>
+                    <button type="button" class="appLogoutBtn btn btn-danger btn-sm" data-dismiss="modal">LogOut</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="toast-container"></div>
+
+    <script src="../config.js"></script>
+    <script type="module" src="./tracking.js"></script>
+</body>
+
+</html>

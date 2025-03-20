@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <title>Today's Tasks</title>
+</head>
+
+<body>
+    <div id="loader-overlay">
+        <div class="loader"></div>
+    </div>
+    <div class="taskBox">
+        <div class="taskPageHeader">
+            <div class="itemTitle">Tasks List</div>
+            <div class="addNewTaskBtn">
+                Add Task
+            </div>
+        </div>
+        <div class="tasksPage" id="tasksPage">
+        </div>
+    </div>
+    <template id="taskTemplate">
+        <div class="listItemCard">
+            <div class="itemTitle"></div>
+            <div class="itemBody"></div>
+            <div class="startTimeDiv">
+                <strong>Task Start Time:</strong> <span class="startTime"></span>
+            </div>
+            <div class="endTimeDiv">
+                <strong>Task End Time:</strong> <span class="endTime"></span>
+            </div>
+        </div>
+    </template>
+    <template id="noDataFoundTemplate">
+        <div class="noDataFoundDiv">
+            <img class="noDataFoundImg" src="../assets/image/noDataFound.png" alt="noDataFound">
+            <div class="noDataFoundTxt">No Tasks Found</div>
+        </div>
+    </template>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <h4 class="modal-title">Add New Task</h4>
+                <form>
+                    <div>
+                      <label for="recipient-name" class="col-form-label taskFieldLabel">Task Title <span>*</span></label>
+                      <input type="text" class="form-control taskField" id="taskTitle">
+                    </div>
+                    <div class="mb-2">
+                      <label for="message-text" class="col-form-label taskFieldLabel">Task Description <span>*</span></label>
+                      <textarea class="form-control taskField" id="taskDescription"></textarea>
+                    </div>
+                  </form>
+                <div class="modelBtns">
+                    <button type="button" class="closeBtn btn btn-outline-secondary btn-sm">Close</button>
+                    <button type="button" class="taskSubmitBtn btn btn-sm" data-dismiss="modal">Add Task</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="toast-container"></div>
+
+    <script src="../config.js"></script>
+    <script type="module" src="./tasks.js"></script>
+</body>
+
+</html>
