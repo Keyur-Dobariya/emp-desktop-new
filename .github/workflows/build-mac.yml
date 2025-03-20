@@ -4,7 +4,7 @@ on: push  # Runs when you push code to the repo
 
 jobs:
   build-mac:
-    runs-on: macos-latest  # Uses a macOS runner
+    runs-on: macos-14  # Uses a macOS runner -> macos-latest
 
     steps:
       - name: Checkout code
